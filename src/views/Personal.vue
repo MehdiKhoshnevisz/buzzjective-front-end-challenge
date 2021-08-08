@@ -10,7 +10,7 @@
 import pageMixin from "@/mixins/pageMixin";
 
 export default {
-  name: "Marketing",
+  name: "Personal",
 
   mixins: [pageMixin],
 };
