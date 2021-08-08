@@ -2,7 +2,7 @@
   <div id="app">
     <TheSidebar />
 
-    <div class="bz-layout">
+    <div class="bz-layout container">
       <router-view />
     </div>
   </div>
