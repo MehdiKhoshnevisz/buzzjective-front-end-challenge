@@ -1,20 +1,31 @@
 <template>
-  <div class="bz-plugin-box">
+  <div :class="['bz-plugin-box', { 'bz-plugin-box--disabled': disabled }]">
     <div class="d-flex justify-content-between mb-4">
-      <h2 class="bz-plugin-box__title">Plugin 1</h2>
+      <h2 class="bz-plugin-box__title">{{ title }}</h2>
       <div>Allowed</div>
     </div>
-    <p class="bz-plugin-box__caption m-0">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-      felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-      tellus magna sit amet nisi.
-    </p>
+    <p class="bz-plugin-box__description m-0">{{ description }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "PluginBox",
+
+  props: {
+    title: {
+      type: String,
+      default: "Plugin",
+    },
+    description: {
+      type: String,
+      default: "lorem ipsum",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
@@ -31,10 +42,15 @@ export default {
     font-size: $font-size-lg;
   }
 
-  &__caption {
+  &__description {
     line-height: 1.5;
     color: $secondary;
     font-size: $font-size-base;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 </style>
