@@ -5,18 +5,17 @@
         <span class="bz-sidebar__header__title">Data<b>Guard</b></span>
       </header>
 
-      <ul class="bz-sidebar__list">
-        <li
+      <nav class="bz-sidebar__list">
+        <router-link
           v-for="(link, index) in links"
           :key="`${link.title}-${index}`"
-          class="bz-sidebar__list__item"
+          :to="link.to"
+          class="bz-sidebar__list__item__link"
         >
-          <a href="" class="bz-sidebar__list__item__link">
-            <i :class="link.icon"></i>
-            <span>{{ link.title }}</span>
-          </a>
-        </li>
-      </ul>
+          <i :class="link.icon"></i>
+          <span>{{ link.title }}</span>
+        </router-link>
+      </nav>
     </div>
 
     <div class="bz-sidebar__plugins-status">
@@ -34,21 +33,21 @@ export default {
       return [
         {
           id: 1,
-          to: {},
+          to: { name: "marketing" },
           icon: "icon-marketing",
           title: "Marketing",
         },
 
         {
           id: 2,
-          to: {},
+          to: { name: "finance" },
           icon: "icon-finance",
           title: "Finance",
         },
 
         {
           id: 3,
-          to: {},
+          to: { name: "personal" },
           icon: "icon-people",
           title: "Personal",
         },
@@ -91,18 +90,16 @@ export default {
           margin-right: 0.8rem;
         }
       }
-
-      &--active {
-        .bz-sidebar__list__item__link {
-          background-color: white;
-          border-left: 5px solid $red;
-        }
-      }
     }
   }
 
   &__plugins-status {
     padding: 1.5rem 2rem;
   }
+}
+
+.router-link-active {
+  background-color: white;
+  border-left: 5px solid $red;
 }
 </style>
