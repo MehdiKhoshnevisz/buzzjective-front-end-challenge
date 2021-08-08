@@ -1,17 +1,31 @@
 <template>
   <div>
-    <h1 class="bz-page-title mb-5">{{ pageTitle }} Plugins</h1>
+    <PageTitle />
 
-    <div class=""></div>
+    <div class="row g-lg-5">
+      <div class="col-lg-4">
+        <PluginBox />
+      </div>
+      <div class="col-lg-4">
+        <PluginBox />
+      </div>
+      <div class="col-lg-4">
+        <PluginBox />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import pageMixin from "@/mixins/pageMixin";
+import PluginBox from "@/components/PluginBox";
+import PageTitle from "@/components/PageTitle";
 
 export default {
   name: "Marketing",
 
-  mixins: [pageMixin],
+  components: {
+    PluginBox,
+    PageTitle,
+  },
 };
 </script>
