@@ -1,0 +1,10 @@
+$icomoon-font-path: '../fonts/font-icon/fonts';
+
+@import '@/assets/fonts/font-icon/style.scss';
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-size: 1.2em;
+  display: inline-block;
+  vertical-align: middle;
+}
