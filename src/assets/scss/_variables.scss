@@ -1,6 +1,17 @@
 @use "sass:map";
 
 // Colors
+$white:    #fff;
+$black:    #000;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
 $dark:    #333333;
 $blue:    #007bff;
 $indigo:  #6610f2;
@@ -12,6 +23,8 @@ $yellow:  #ffc107;
 $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
+
+$secondary: $gray-500;
 
 // Grid breakpoints
 $grid-breakpoints: (
@@ -35,3 +48,10 @@ $font-size-sm: $font-size-base * .875;
 $font-size-lg: $font-size-base * 1.25;
 $font-size-xl: $font-size-base * 1.5;
 $font-size-xxl: $font-size-base * 2;
+
+// Components
+$rounded-pill: 50rem;
+$border-radius: .25rem;
+$border-radius-sm: .2rem;
+$border-radius-lg: .3rem;
+$border-radius-xl: .6rem;
