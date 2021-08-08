@@ -2,6 +2,9 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
+import "./assets/scss/main.scss";
+import "./assets/scss/lib/bootstrap5/bootstrap-grid.min.css";
+
 Vue.config.productionTip = false;
 
 new Vue({

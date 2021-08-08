@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-size: 16px;
+
+  @media screen and (max-width: $breakpoint-desktop){
+    font-size: 14px;
+  }
+}
+
+#app {
+  display: flex;
+  min-height: 100vh;
+
+  @media screen and (max-width: $breakpoint-desktop){
+    display: block;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.bz-layout {
+  flex: 1;
+  width: 100%;
+  padding: 1.5rem 2rem;
+}
+
+.bz-page-title {
+  font-weight: normal;
+  font-size: $font-size-lg;
+}
