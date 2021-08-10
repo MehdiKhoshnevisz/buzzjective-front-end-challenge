@@ -1,9 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-const Marketing = () => import("@/views/Marketing.vue");
-const Finance = () => import("@/views/Finance.vue");
-const Personal = () => import("@/views/Personal.vue");
+// const Marketing = () => import("@/views/Marketing.vue");
+// const Finance = () => import("@/views/Finance.vue");
+// const Personal = () => import("@/views/Personal.vue");
+
+const Main = () => import("@/views/index.vue");
 
 Vue.use(VueRouter);
 
@@ -16,22 +18,22 @@ const routes = [
   {
     path: "/marketing",
     name: "marketing",
-    component: Marketing,
-    meta: { title: "Marketing" },
+    component: Main,
+    meta: { title: "Marketing", tab: "tab1" },
   },
 
   {
     path: "/finance",
     name: "finance",
-    component: Finance,
-    meta: { title: "Finance" },
+    component: Main,
+    meta: { title: "Finance", tab: "tab2" },
   },
 
   {
     path: "/personal",
     name: "personal",
-    component: Personal,
-    meta: { title: "Personal" },
+    component: Main,
+    meta: { title: "Personal", tab: "tab3" },
   },
 ];
 

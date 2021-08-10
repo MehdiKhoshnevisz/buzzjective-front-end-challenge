@@ -6,6 +6,7 @@
         <ToggleSwitch
           :name="`${kebabCaseFormat(`${title} switch`)}`"
           :is-active="isActive"
+          @change="updatePlugin"
         />
       </div>
     </div>
@@ -45,6 +46,10 @@ export default {
 
   methods: {
     kebabCaseFormat,
+
+    updatePlugin(value) {
+      this.$emit("update", value);
+    },
   },
 };
 </script>
@@ -52,7 +57,7 @@ export default {
 <style lang="scss" scoped>
 .bz-plugin-box {
   padding: 1.5rem;
-  min-height: 8.9rem;
+  min-height: 10rem;
   border: 3px solid $gray-300;
   border-radius: $border-radius-xl;
 

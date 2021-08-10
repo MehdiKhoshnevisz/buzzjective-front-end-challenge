@@ -1,0 +1,63 @@
+<template>
+  <div class="row g-lg-5">
+    <div
+      v-for="(plugin, index) in plugins"
+      :key="`${plugin.title}-${index}`"
+      class="col-lg-4"
+      v-show="isShowPlugin(tabName, nonSpaceFormat(plugin.title))"
+    >
+      <PluginBox
+        v-if="isShowPlugin(tabName, nonSpaceFormat(plugin.title))"
+        :title="`${capitalize(plugin.title)}`"
+        :description="plugin.description"
+        :disabled="
+          isDisabledAllPlugins ||
+          selectedTabDate(tabName).disabled.includes(
+            nonSpaceFormat(plugin.title)
+          )
+        "
+        :is-active="
+          selectedTabDate(tabName).active.includes(nonSpaceFormat(plugin.title))
+        "
+        @update="onUpdatePlugin($event, nonSpaceFormat(plugin.title))"
+      />
+    </div>
+  </div>
+</template>
+
+<script>
+import PluginBox from "@/components/PluginBox";
+import { mapState, mapGetters, mapMutations } from "vuex";
+import { capitalize, nonSpaceFormat } from "@/utils/type";
+
+export default {
+  name: "PluginLoader",
+
+  components: {
+    PluginBox,
+  },
+
+  computed: {
+    ...mapState("data", ["plugins", "isDisabledAllPlugins"]),
+    ...mapGetters("data", ["isShowPlugin", "selectedTabDate"]),
+
+    tabName() {
+      return this.$route.meta.tab;
+    },
+  },
+
+  methods: {
+    capitalize,
+    nonSpaceFormat,
+    ...mapMutations("data", ["UPDATE_PLUGIN"]),
+
+    onUpdatePlugin(isActive, plugin) {
+      this.UPDATE_PLUGIN({
+        tab: this.tabName,
+        plugin,
+        isActive,
+      });
+    },
+  },
+};
+</script>

@@ -23,18 +23,28 @@
         name="global-toggle-switch"
         size="lg"
         display="flex"
+        :is-active="true"
         :has-power-icon="true"
         active-text="enabled"
         in-active-text="disabled"
         prefix-text="All plugins"
         text-style="color: black;"
-        @change="changeAllPlugins"
+        @change="updateAllPlugins"
       />
     </div>
+
+    <div
+      :class="[
+        `bz-sidebar__overlay bz-sidebar__overlay--${
+          isDisabledAllPlugins ? 'inactive' : 'active'
+        }`,
+      ]"
+    ></div>
   </aside>
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 import ToggleSwitch from "@/components/ToggleSwitch";
 
 export default {
@@ -45,6 +55,8 @@ export default {
   },
 
   computed: {
+    ...mapState("data", ["isDisabledAllPlugins"]),
+
     links() {
       return [
         {
@@ -72,8 +84,10 @@ export default {
   },
 
   methods: {
-    changeAllPlugins(value) {
-      console.log("value", value);
+    ...mapMutations("data", ["SET_DISABLED"]),
+
+    updateAllPlugins(value) {
+      this.SET_DISABLED(!value);
     },
   },
 };
@@ -82,6 +96,7 @@ export default {
 <style lang="scss" scoped>
 .bz-sidebar {
   display: flex;
+  position: relative;
   min-width: 18.75rem;
   flex-direction: column;
   background-color: rgba($red, 0.05);
@@ -116,7 +131,38 @@ export default {
   }
 
   &__plugins-status {
+    z-index: 50;
     padding: 1.5rem 2rem;
+  }
+
+  &__overlay {
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    &--active {
+      background: linear-gradient(
+        360deg,
+        rgba($teal, 0.4) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &--inactive {
+      background: linear-gradient(
+        360deg,
+        rgba($red, 0.4) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
   }
 }
 
