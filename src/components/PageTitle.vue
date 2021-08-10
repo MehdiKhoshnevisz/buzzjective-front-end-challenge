@@ -1,5 +1,5 @@
 <template>
-  <h1 class="bz-page-title mb-5">{{ pageTitle }} Plugins</h1>
+  <h1 class="bz-page-title mb-5 mt-0">{{ pageTitle }} Plugins</h1>
 </template>
 
 <script>
@@ -11,3 +11,10 @@ export default {
   mixins: [pageMixin],
 };
 </script>
+
+<style lang="scss" scoped>
+.bz-page-title {
+  font-weight: normal;
+  font-size: $font-size-xl;
+}
+</style>
