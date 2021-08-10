@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'buzzjective-icon-font';
-  src:  url('fonts/buzzjective-icon-font.eot?fcjgx8');
-  src:  url('fonts/buzzjective-icon-font.eot?fcjgx8#iefix') format('embedded-opentype'),
-    url('fonts/buzzjective-icon-font.ttf?fcjgx8') format('truetype'),
-    url('fonts/buzzjective-icon-font.woff?fcjgx8') format('woff'),
-    url('fonts/buzzjective-icon-font.svg?fcjgx8#buzzjective-icon-font') format('svg');
+  src:  url('fonts/buzzjective-icon-font.eot?rtcr3t');
+  src:  url('fonts/buzzjective-icon-font.eot?rtcr3t#iefix') format('embedded-opentype'),
+    url('fonts/buzzjective-icon-font.ttf?rtcr3t') format('truetype'),
+    url('fonts/buzzjective-icon-font.woff?rtcr3t') format('woff'),
+    url('fonts/buzzjective-icon-font.svg?rtcr3t#buzzjective-icon-font') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -33,4 +33,7 @@
 }
 .icon-people:before {
   content: "\e902";
+}
+.icon-power:before {
+  content: "\e903";
 }

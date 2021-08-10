@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?fcjgx8');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?fcjgx8#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?fcjgx8') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?fcjgx8') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?fcjgx8##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rtcr3t');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rtcr3t#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?rtcr3t') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?rtcr3t') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?rtcr3t##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -40,6 +40,11 @@
 .icon-people {
   &:before {
     content: $icon-people; 
+  }
+}
+.icon-power {
+  &:before {
+    content: $icon-power; 
   }
 }
 
