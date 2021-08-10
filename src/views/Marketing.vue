@@ -12,6 +12,7 @@
           :title="`${plugin.title} ${index + 1}`"
           :description="plugin.description"
           :disabled="plugin.disabled"
+          :is-active="plugin.isActive"
         />
       </div>
     </div>
@@ -36,44 +37,44 @@ export default {
         {
           title: "Plugin",
           disabled: true,
+          isActive: false,
           description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-            felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-            tellus magna sit amet nisi.`,
+            felis eget mattis pulvinar, justo nisi scelerisque libero.`,
         },
         {
           title: "Plugin",
           disabled: false,
+          isActive: true,
           description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-            felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-            tellus magna sit amet nisi.`,
+            felis eget mattis pulvinar, justo nisi scelerisque libero.`,
         },
         {
           title: "Plugin",
           disabled: false,
+          isActive: true,
           description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-            felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-            tellus magna sit amet nisi.`,
+            felis eget mattis pulvinar, justo nisi scelerisque libero.`,
         },
         {
           title: "Plugin",
           disabled: false,
+          isActive: true,
           description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-            felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-            tellus magna sit amet nisi.`,
+            felis eget mattis pulvinar, justo nisi scelerisque libero.`,
         },
         {
           title: "Plugin",
           disabled: false,
+          isActive: false,
           description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-            felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-            tellus magna sit amet nisi.`,
+            felis eget mattis pulvinar, justo nisi scelerisque libero.`,
         },
         {
           title: "Plugin",
           disabled: false,
+          isActive: false,
           description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius,
-            felis eget mattis pulvinar, justo nisi scelerisque libero, vitae fringilla
-            tellus magna sit amet nisi.`,
+            felis eget mattis pulvinar, justo nisi scelerisque libero.`,
         },
       ];
     },

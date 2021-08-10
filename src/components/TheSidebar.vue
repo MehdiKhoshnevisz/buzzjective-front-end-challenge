@@ -19,14 +19,30 @@
     </div>
 
     <div class="bz-sidebar__plugins-status">
-      <span>All Plugins Enabled</span>
+      <ToggleSwitch
+        name="global-toggle-switch"
+        size="lg"
+        display="flex"
+        :has-power-icon="true"
+        active-text="enabled"
+        in-active-text="disabled"
+        prefix-text="All plugins"
+        text-style="color: black;"
+        @change="changeAllPlugins"
+      />
     </div>
   </aside>
 </template>
 
 <script>
+import ToggleSwitch from "@/components/ToggleSwitch";
+
 export default {
   name: "TheSidebar",
+
+  components: {
+    ToggleSwitch,
+  },
 
   computed: {
     links() {
@@ -52,6 +68,12 @@ export default {
           title: "Personal",
         },
       ];
+    },
+  },
+
+  methods: {
+    changeAllPlugins(value) {
+      console.log("value", value);
     },
   },
 };

@@ -1,14 +1,22 @@
 <template>
   <div :class="['bz-plugin-box', { 'bz-plugin-box--disabled': disabled }]">
-    <div class="d-flex justify-content-between mb-4">
+    <div class="d-flex justify-content-between mb-2">
       <h2 class="bz-plugin-box__title">{{ title }}</h2>
-      <div>Allowed</div>
+      <div>
+        <ToggleSwitch
+          :name="`${kebabCaseFormat(`${title} switch`)}`"
+          :is-active="isActive"
+        />
+      </div>
     </div>
     <p class="bz-plugin-box__description m-0">{{ description }}</p>
   </div>
 </template>
 
 <script>
+import { kebabCaseFormat } from "@/utils/type";
+import ToggleSwitch from "@/components/ToggleSwitch";
+
 export default {
   name: "PluginBox",
 
@@ -25,6 +33,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    isActive: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  components: {
+    ToggleSwitch,
+  },
+
+  methods: {
+    kebabCaseFormat,
   },
 };
 </script>
@@ -39,13 +59,13 @@ export default {
   &__title {
     margin: 0;
     font-weight: normal;
-    font-size: $font-size-lg;
+    font-size: $font-size-xl;
   }
 
   &__description {
     line-height: 1.5;
     color: $secondary;
-    font-size: $font-size-base;
+    font-size: $font-size-lg;
   }
 
   &--disabled {
