@@ -1,10 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// const Marketing = () => import("@/views/Marketing.vue");
-// const Finance = () => import("@/views/Finance.vue");
-// const Personal = () => import("@/views/Personal.vue");
-
 const Main = () => import("@/views/index.vue");
 
 Vue.use(VueRouter);
