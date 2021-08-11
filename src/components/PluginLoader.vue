@@ -13,12 +13,12 @@
           :description="plugin.description"
           :disabled="
             isDisabledAllPlugins ||
-            selectedTabDate(tabName).disabled.includes(
+            selectedTabData(tabName).disabled.includes(
               nonSpaceFormat(plugin.title)
             )
           "
           :is-active="
-            selectedTabDate(tabName).active.includes(
+            selectedTabData(tabName).active.includes(
               nonSpaceFormat(plugin.title)
             )
           "
@@ -43,7 +43,7 @@ export default {
 
   computed: {
     ...mapState("data", ["plugins", "isDisabledAllPlugins"]),
-    ...mapGetters("data", ["isShowPlugin", "selectedTabDate"]),
+    ...mapGetters("data", ["isShowPlugin", "selectedTabData"]),
 
     tabName() {
       return this.$route.meta.tab;

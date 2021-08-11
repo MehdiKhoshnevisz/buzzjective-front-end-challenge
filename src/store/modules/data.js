@@ -5,11 +5,15 @@ const state = {
 };
 
 const getters = {
-  selectedPlugins: (state) => (tab) => {
+  selectedTabData: (state) => (tab) => {
+    return state.tabData[tab];
+  },
+
+  selectedPlugins: (state, getters) => (tab) => {
     const selectedPlugins = [
-      ...state.tabData[tab].active,
-      ...state.tabData[tab].disabled,
-      ...state.tabData[tab].inactive,
+      ...getters.selectedTabData(tab).active,
+      ...getters.selectedTabData(tab).disabled,
+      ...getters.selectedTabData(tab).inactive,
     ];
 
     return selectedPlugins;
@@ -17,10 +21,6 @@ const getters = {
 
   isShowPlugin: (state, getters) => (tab, plugin) => {
     return getters.selectedPlugins(tab).includes(plugin);
-  },
-
-  selectedTabDate: (state) => (tab) => {
-    return state.tabData[tab];
   },
 };
 
