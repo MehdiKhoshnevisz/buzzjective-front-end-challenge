@@ -96,7 +96,6 @@ export default {
 .bz-toggle-switch {
   display: none;
 
-  // add default box-sizing for this scope
   &,
   &::after,
   &::before,
