@@ -26,4 +26,8 @@ a {
   width: 100%;
   overflow: auto;
   padding: 2rem;
+
+  @media screen and (max-width: $breakpoint-desktop){
+    width: auto;
+  }
 }

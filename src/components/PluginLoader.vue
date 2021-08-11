@@ -1,9 +1,9 @@
 <template>
-  <div class="row g-lg-5">
+  <div class="row g-5">
     <div
       v-for="(plugin, index) in plugins"
       :key="`${plugin.title}-${index}`"
-      class="col-lg-4"
+      class="col-xl-4 col-md-6 col-12"
       v-show="isShowPlugin(tabName, nonSpaceFormat(plugin.title))"
     >
       <PluginBox
