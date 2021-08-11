@@ -47,13 +47,12 @@ export default {
 
         this.SET_PLUGINS(plugins);
         this.SET_TAB_DATA(tabData);
-
-        this.$Progress.finish();
       } catch (error) {
         console.error(error);
         this.$Progress.fail();
       } finally {
         this.isLoading = false;
+        this.$Progress.finish();
       }
     },
   },
