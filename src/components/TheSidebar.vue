@@ -97,7 +97,7 @@ export default {
 .bz-sidebar {
   display: flex;
   position: relative;
-  min-width: 18.75rem;
+  min-width: 20rem;
   flex-direction: column;
   background-color: rgba($red, 0.05);
 
@@ -121,6 +121,7 @@ export default {
         display: block;
         padding: 1rem 1.5rem;
         font-size: $font-size-lg;
+        transition: all 0.2s ease-in-out;
         border-left: 5px solid transparent;
 
         i {
