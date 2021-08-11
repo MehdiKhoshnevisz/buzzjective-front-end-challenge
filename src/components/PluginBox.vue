@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { kebabCaseFormat } from "@/utils/type";
+import { kebabCaseFormat } from "@/utils/format";
 import ToggleSwitch from "@/components/ToggleSwitch";
 
 export default {

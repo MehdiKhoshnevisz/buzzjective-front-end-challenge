@@ -32,7 +32,7 @@
 <script>
 import PluginBox from "@/components/PluginBox";
 import { mapState, mapGetters, mapMutations } from "vuex";
-import { capitalize, nonSpaceFormat } from "@/utils/type";
+import { capitalize, nonSpaceFormat } from "@/utils/format";
 
 export default {
   name: "PluginLoader",
